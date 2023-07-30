@@ -66,11 +66,13 @@ $robots = "NOINDEX, NOFOLLOW";
                 </label>
             @endforeach
         </div>
+
         <div id="time_choice"></div>
         <div class="hor_center buts display_none" id="buttons_div">
             <button type="button" class="but" id="zapis_usluga_form_res" disabled />Сбросить</button>
             <button type="button" class="but" id="zapis_usluga_form_sub" disabled />Готово</button>
         </div>
+
     </form>
 </div>
 <script src="{{ url()->asset('storage'.DIRECTORY_SEPARATOR.'ppntmt'.DIRECTORY_SEPARATOR.'appointment'.DIRECTORY_SEPARATOR.'js'.DIRECTORY_SEPARATOR.'appointment.js')}}"></script>

@@ -45,14 +45,14 @@ $robots = "NOINDEX, NOFOLLOW";
     @csrf
         <div id="master_choice">
             @foreach ($data['masters'] as $master)
-                <label class="">
+                <label>
                     <input
                         type="radio"
                         name="master"
                         id="{{$master['id']}}"
                         value="{{$master['id']}}"
                     />
-                    <span>
+                    <span class="back">
                         <img
                             class="display_inline_block margint0b0rlauto"
                             src="{{asset('storage'.DIRECTORY_SEPARATOR.$master['master_photo'])}}"

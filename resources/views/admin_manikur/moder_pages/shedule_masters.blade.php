@@ -7,8 +7,6 @@ $robots = "NOINDEX, NOFOLLOW";
 @extends("layouts/index_admin")
 
 @section("content")
-<link rel="stylesheet" href="{{ url()->asset('storage'.DIRECTORY_SEPARATOR.'ppntmt'.DIRECTORY_SEPARATOR.'appointment'.DIRECTORY_SEPARATOR.'css'.DIRECTORY_SEPARATOR.'style.css') }}" />
-
 <div class="content">
     @if (!empty(session('data')))
         @if (is_array(session('data')))

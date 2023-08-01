@@ -14,6 +14,7 @@
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
   <META NAME="Robots" CONTENT="{{ $robots }}">
   <meta name="author" content="I-Jurij">
+  <link rel="stylesheet" href="{{ url()->asset('storage'.DIRECTORY_SEPARATOR.'ppntmt'.DIRECTORY_SEPARATOR.'appointment'.DIRECTORY_SEPARATOR.'css'.DIRECTORY_SEPARATOR.'style.css') }}" />
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>

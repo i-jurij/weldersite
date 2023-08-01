@@ -23,22 +23,26 @@ foreach ($content['pages_menu'] as $pages) {
     if (is_array($pages) && !empty($pages)) {
         if ($pages['alias'] === 'callback') {
             $sort_pages[0] = $pages;
-        } elseif ($pages['alias'] === 'signup') {
-            $sort_pages[1] = $pages;
-        } elseif ($pages['alias'] === 'manikur') {
+        } elseif ($pages['alias'] === 'zabory') {
             $sort_pages[2] = $pages;
         } elseif ($pages['alias'] === 'second') {
             $sort_pages[3] = $pages;
-        } elseif ($pages['alias'] === 'gallery') {
+        } elseif ($pages['alias'] === 'naves') {
             $sort_pages[4] = $pages;
-        } elseif ($pages['alias'] === 'about') {
+        } elseif ($pages['alias'] === 'lestniza') {
             $sort_pages[5] = $pages;
-        } elseif ($pages['alias'] === 'map') {
+        } elseif ($pages['alias'] === 'other_product') {
             $sort_pages[6] = $pages;
-        } elseif ($pages['alias'] === 'price') {
+        } elseif ($pages['alias'] === 'gallery') {
             $sort_pages[7] = $pages;
-        } elseif ($pages['alias'] === 'persinfo') {
+        } elseif ($pages['alias'] === 'about') {
             $sort_pages[8] = $pages;
+        } elseif ($pages['alias'] === 'map') {
+            $sort_pages[9] = $pages;
+        } elseif ($pages['alias'] === 'price') {
+            $sort_pages[10] = $pages;
+        } elseif ($pages['alias'] === 'persinfo') {
+            $sort_pages[11] = $pages;
         }
     }
 }

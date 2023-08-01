@@ -8,8 +8,6 @@ $uv = '';
 @extends("layouts/index_admin")
 
 @section("content")
-<link rel="stylesheet" href="{{ url()->asset('storage'.DIRECTORY_SEPARATOR.'ppntmt'.DIRECTORY_SEPARATOR.'appointment'.DIRECTORY_SEPARATOR.'css'.DIRECTORY_SEPARATOR.'style.css') }}" />
-
 <div class="content">
     @if (!empty($data))
         @if (is_array($data))
@@ -55,7 +53,10 @@ $uv = '';
                         $res .= '</div>';
                     }
                 }
-                echo $res;
+                if (!empty($res)) {
+                    echo $res;
+                }
+
                 ?>
             @elseif (!empty($data['by_master']))
                 <div id="app">

@@ -43,14 +43,14 @@
 	--bgcolor: #707070;
 	--bgcolor-content: rgba(219,199,164,1);
 	--bgcolor-button-active: white;
-	--button-disabled-color: rgba(177, 177, 177, 0.527);
+	--button-disabled-color: rgba(97, 96, 96, 0.527);
 	--input_bgcolor: white;
 
 	--fontcolor-light: #000000;
 	--fontcolor-dark: #1CBADF;
 
 	--fontshadow: rgba(255,255,255,0.5) 0px 2px 2px;
-	--boxshadow:	4px 4px 4px 0px rgba(0,0,0,0.75),  inset 2px 2px 2px 0px rgba(186,186,186,1);
+	--boxshadow:	4px 4px 4px 0px rgba(0,0,0,0.75),  inset 2px 2px 2px 0px rgb(255, 245, 245);
 	--boxshadow-active: inset -2px -2px 2px 0px rgba(233, 233, 233, 0.9), inset 2px 2px 2px 0px rgb(19, 19, 19);
 
 	--table-bgcolor1: rgba(221, 203, 165, 0.7);
@@ -814,9 +814,9 @@ a.gallery_a:hover img{
 	overflow: hidden;
 }
 
-.buttons:hover,
-.buttons:focus,
-.buttons:active {
+.buttons:hover:enabled,
+.buttons:focus:enabled,
+.buttons:active:enabled {
   background-color: var(--bgcolor-button-active);
   box-shadow: var(--boxshadow-active);
 }
@@ -825,6 +825,7 @@ a.gallery_a:hover img{
   	background-color: var(--bgcolor);
 	color: var(--button-disabled-color);
 }
+
 
 .backbutton {
 	position: fixed;

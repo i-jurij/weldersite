@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\LogsController;
+use App\Http\Controllers\Admin\PagesController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\CaptchaServiceController;
@@ -13,7 +14,6 @@ use App\Http\Controllers\Moder\ContactsController;
 use App\Http\Controllers\Moder\GalleryController;
 use App\Http\Controllers\Moder\MapController;
 use App\Http\Controllers\Moder\MastersController;
-use App\Http\Controllers\Moder\PagesController;
 use App\Http\Controllers\Moder\PriceEditController;
 use App\Http\Controllers\Moder\ServicePageEditController;
 use App\Http\Controllers\Moder\SheduleMasterController;
@@ -131,6 +131,30 @@ Route::prefix('admin')->name('admin.')
                     return response('Сброс кэша выполнен!');
                 })->name('clear');
             });
+
+        // Route::resource('pages', PagesController::class);
+        Route::controller(PagesController::class)
+                ->prefix('pages')
+                ->name('pages.')
+                ->group(function () {
+                    Route::get('/create', 'create')->name('create');
+                    Route::post('/create', 'store')->name('store');
+                    Route::get('/remove', 'index')->name('edit');
+                    Route::post('/remove', 'destroy')->name('remove');
+                    Route::get('/edit', 'index')->name('edit');
+                    Route::post('/edit', 'edit')->name('edit.form');
+                    Route::post('/update', 'update')->name('update');
+                });
+
+        Route::controller(ServicePageEditController::class)
+                ->prefix('service_page')
+                ->name('service_page.')
+                ->group(function () {
+                    Route::get('/', 'index')->name('edit');
+                    Route::get('/create', 'create')->name('create');
+                    Route::get('/services', 'services_edit')->name('services_edit');
+                    Route::post('/services', 'go')->name('go');
+                });
     });
     /*
     * ADMIN AND MODER ROUTES
@@ -148,30 +172,6 @@ Route::prefix('admin')->name('admin.')
             Route::get('/edit', 'index')->name('edit');
             Route::post('/edit', 'edit')->name('post_edit');
             Route::post('/edit/update', 'update')->name('update');
-        });
-
-        // Route::resource('pages', PagesController::class);
-        Route::controller(PagesController::class)
-        ->prefix('pages')
-        ->name('pages.')
-        ->group(function () {
-            Route::get('/create', 'create')->name('create');
-            Route::post('/create', 'store')->name('store');
-            Route::get('/remove', 'index')->name('edit');
-            Route::post('/remove', 'destroy')->name('remove');
-            Route::get('/edit', 'index')->name('edit');
-            Route::post('/edit', 'edit')->name('edit.form');
-            Route::post('/update', 'update')->name('update');
-        });
-
-        Route::controller(ServicePageEditController::class)
-        ->prefix('service_page')
-        ->name('service_page.')
-        ->group(function () {
-            Route::get('/', 'index')->name('edit');
-            Route::get('/create', 'create')->name('create');
-            Route::get('/services', 'services_edit')->name('services_edit');
-            Route::post('/services', 'go')->name('go');
         });
 
         Route::controller(PriceEditController::class)

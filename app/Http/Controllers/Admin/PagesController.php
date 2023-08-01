@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Moder;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePageRequest;
@@ -157,7 +157,7 @@ class PagesController extends Controller
             $res .= $this->delContrModMigrView($alias);
         }
 
-        if (!empty($page_id) && $pages->destroy($page_id)) {
+        if (!empty($page_id) && $pages::with('categories')->with('services')->where('id', $page_id)->delete()) {
             // DELETE categories and services from table in db
             /* IF SET RELATIONSHIPS in model - not need
             if (!empty($service_page) && $service_page === 'yes') {

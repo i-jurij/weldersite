@@ -46,8 +46,6 @@
 @extends("layouts/index")
 
 @section("content")
-<link rel="stylesheet" href="{{ url()->asset('storage'.DIRECTORY_SEPARATOR.'ppntmt'.DIRECTORY_SEPARATOR.'appointment'.DIRECTORY_SEPARATOR.'css'.DIRECTORY_SEPARATOR.'style.css') }}" />
-
     @if (!empty($res))
         <div class="content" id="res_div">
             @if (is_array($res))

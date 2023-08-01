@@ -27,8 +27,6 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
 
 @section("content")
 
-<link rel="stylesheet" href="{{ url()->asset('storage'.DIRECTORY_SEPARATOR.'ppntmt'.DIRECTORY_SEPARATOR.'appointment'.DIRECTORY_SEPARATOR.'css'.DIRECTORY_SEPARATOR.'style.css') }}" />
-
     @if (!empty($menu)) <p class="content">{{$menu}}</p> @endif
 
     @if (!empty(session('res')))
@@ -205,8 +203,8 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
 
             <div class="zapis_usluga margin_bottom_1rem" id="buttons_div">
                 <button class="buttons" id="dismiss_order" disabled>Ваши записи</button>
-                <button type="button" class="buttons" id="button_back" value="" disabled >Назад</button>
-                <button type="button" class="buttons" id="button_next" value="" disabled >Записаться</button>
+                <button class="buttons" id="button_back" value="" disabled >Назад</button>
+                <button class="buttons" id="button_next" value="" disabled >Записаться</button>
             </div>
 
         @else

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\LogsController;
 use App\Http\Controllers\Admin\PagesController;
+use App\Http\Controllers\Admin\ServicePageEditController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\CaptchaServiceController;
@@ -15,7 +16,6 @@ use App\Http\Controllers\Moder\GalleryController;
 use App\Http\Controllers\Moder\MapController;
 use App\Http\Controllers\Moder\MastersController;
 use App\Http\Controllers\Moder\PriceEditController;
-use App\Http\Controllers\Moder\ServicePageEditController;
 use App\Http\Controllers\Moder\SheduleMasterController;
 use App\Http\Controllers\Moder\SignupController as ModerSignupController;
 use App\Http\Controllers\Moder\SignupSettingsController;

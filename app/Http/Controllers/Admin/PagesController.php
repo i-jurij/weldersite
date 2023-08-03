@@ -114,6 +114,7 @@ class PagesController extends Controller
     public function update(UpdatePageRequest $request, Page $pages)
     {
         $array = [
+            'alias' => $request->alias,
             'title' => $request->title,
             'description' => $request->description,
             'keywords' => ($request->keywords) ? $request->keywords : '',

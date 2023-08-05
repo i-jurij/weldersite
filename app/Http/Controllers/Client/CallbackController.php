@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\JobCallbackMail;
+use App\Mail\CallBackMail;
 use App\Models\Callback;
 use App\Models\Client;
 use App\Models\Contacts;
@@ -136,7 +137,18 @@ class CallbackController extends Controller
                     'phone' => $request->phone_number,
                     'send' => ($request->send) ? $request->send : 'no send',
                 ];
-                JobCallbackMail::dispatch($data);
+                // JobCallbackMail::dispatch($data);
+                $today = date('Y-m-d_H:i:s');
+                try {
+                    Mail::to('yjurij@gmail.com')->send(new CallBackMail($data));
+                } catch (\Throwable $th) {
+                    $storageDestinationPath = storage_path('logs'.DIRECTORY_SEPARATOR.'callback_mail_error.log');
+                    if (!File::exists($storageDestinationPath)) {
+                        File::put($storageDestinationPath, "\n{$today}\ndd($th)\n");
+                    } else {
+                        File::append($storageDestinationPath, "\n{$today}\ndd($th)\n");
+                    }
+                }
             }
 
             $res = ['Ваша заявка принята. Ожидайте звонка...'];

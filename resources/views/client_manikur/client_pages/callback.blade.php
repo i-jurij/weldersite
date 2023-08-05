@@ -75,7 +75,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
                 </div>
 
                 <div class="margin_top_1rem">
-                    <p class="pers">
+                    <p class="pad">
                     Отправляя данную форму, вы даете согласие на
                     <br>
                     <a href="{{url('/persinfo')}}">

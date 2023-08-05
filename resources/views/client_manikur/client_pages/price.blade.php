@@ -64,8 +64,8 @@ if (!empty($data['serv'])) {
                         }
                     } else {
                         ?>
-                        <tr><td colspan="3"><h3>Другие услуги</h3></td></tr>
-                        <!-- <tr><td colspan="3"></td></tr> -->
+                        <!-- <tr><td colspan="3"><h3>Другие услуги</h3></td></tr> -->
+                        <tr><td colspan="3"></td></tr>
                         <?php
                         foreach ($serv as $name => $value) {
                             ?>

@@ -25,7 +25,7 @@ foreach ($content['pages_menu'] as $pages) {
             $sort_pages[0] = $pages;
         } elseif ($pages['alias'] === 'zabory') {
             $sort_pages[2] = $pages;
-        } elseif ($pages['alias'] === 'second') {
+        } elseif ($pages['alias'] === 'vorota') {
             $sort_pages[3] = $pages;
         } elseif ($pages['alias'] === 'naves') {
             $sort_pages[4] = $pages;

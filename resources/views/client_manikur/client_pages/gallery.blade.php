@@ -66,7 +66,7 @@ if (isset($page_data) && is_array($page_data) && !empty($page_data[0])) {
         @endphp
     </div>
     </div>
-    <p class="zapis_usluga back shad pad margin_rlb1">
+    <p class="zapis_usluga back shad mar_pad">
         Больше снимков можно посмотреть в
         <a href="@if (isset($photo_link)) {{$photo_link}} @endif" > @if (isset($photo_link_name)) {{ strtoupper($photo_link_name[0])}} @endif </a>
      </p>

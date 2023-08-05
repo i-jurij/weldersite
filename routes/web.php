@@ -155,11 +155,7 @@ Route::prefix('admin')->name('admin.')
                     Route::get('/services', 'services_edit')->name('services_edit');
                     Route::post('/services', 'go')->name('go');
                 });
-    });
-    /*
-    * ADMIN AND MODER ROUTES
-    */
-    Route::middleware('ismoder')->group(function () {
+
         Route::controller(ContactsController::class)
         ->prefix('contacts')
         ->name('contacts.')
@@ -172,16 +168,6 @@ Route::prefix('admin')->name('admin.')
             Route::get('/edit', 'index')->name('edit');
             Route::post('/edit', 'edit')->name('post_edit');
             Route::post('/edit/update', 'update')->name('update');
-        });
-
-        Route::controller(PriceEditController::class)
-        ->prefix('price')
-        ->name('price.')
-        ->group(function () {
-            Route::get('/', 'edit')->name('edit');
-            Route::get('/edit', 'post_edit')->name('post_edit');
-            Route::post('/edit', 'post_edit')->name('post_edit');
-            Route::post('/update', 'update')->name('update');
         });
 
         Route::controller(AboutEditController::class)
@@ -211,6 +197,20 @@ Route::prefix('admin')->name('admin.')
         ->group(function () {
             Route::get('/', 'index')->name('edit');
             Route::post('/', 'go')->name('go');
+        });
+    });
+    /*
+    * ADMIN AND MODER ROUTES
+    */
+    Route::middleware('ismoder')->group(function () {
+        Route::controller(PriceEditController::class)
+        ->prefix('price')
+        ->name('price.')
+        ->group(function () {
+            Route::get('/', 'edit')->name('edit');
+            Route::get('/edit', 'post_edit')->name('post_edit');
+            Route::post('/edit', 'post_edit')->name('post_edit');
+            Route::post('/update', 'update')->name('update');
         });
 
         Route::controller(MastersController::class)

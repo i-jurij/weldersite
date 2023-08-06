@@ -20,6 +20,7 @@ trait Upload
      * @param $this->filename - name of file without extension
      */
     public string $filename;
+    public string $extension;
 
     /**
      * can be set:
@@ -38,7 +39,7 @@ trait Upload
         $folder = !is_null($this->folder) ? $this->folder : null;
         $disk = !is_null($this->disk) ? $this->disk : 'public';
         // Determine the file's extension based on the file's MIME type...
-        $extension = $file->extension();
+        $extension = !is_null($this->extension) ? $this->extension : $file->extension();
 
         return $file->storeAs(
             $folder,

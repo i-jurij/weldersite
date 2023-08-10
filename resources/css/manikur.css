@@ -173,10 +173,10 @@ textarea:valid {
     border: 1px solid #999;
 }
 
-.ankor:target {scroll-margin-top:6rem;}
+.ankor:target {scroll-margin-top:8rem;}
 
 .but_back {
-	background: var(--bgcolor-content) url(@/../imgs/back-content.jpg);
+	background: var(--bgcolor-content) url(@/../imgs/back-content.jpg) local;
 }
 
 .clear {
@@ -934,7 +934,7 @@ a.gallery_a:hover img{
 	padding: 1rem;
 	margin: 1rem;
 	border-radius: var(--radius);
-	background: var(--bgcolor-content) url("../../imgs/back-content.jpg") no-repeat ;
+	background: var(--bgcolor-content) url(@/../imgs/back-content.jpg) no-repeat ;
 	background-size: auto;
 	box-shadow: var(--boxshadow);
 }

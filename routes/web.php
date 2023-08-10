@@ -154,6 +154,8 @@ Route::prefix('admin')->name('admin.')
                     Route::get('/create', 'create')->name('create');
                     Route::get('/services', 'services_edit')->name('services_edit');
                     Route::post('/services', 'go')->name('go');
+                    Route::get('/content', 'content')->name('content');
+                    Route::post('/content', 'content')->name('post_content');
                 });
 
         Route::controller(ContactsController::class)

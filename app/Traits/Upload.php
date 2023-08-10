@@ -11,16 +11,16 @@ trait Upload
     /**
      * @param $this->disk - from laravel filesystem
      */
-    public string $disk;
+    public string $disk = 'public';
     /**
      * @param $this->folder - path to directory into laravel disk
      */
-    public string $folder;
+    public string $folder = '';
     /**
      * @param $this->filename - name of file without extension
      */
-    public string $filename;
-    public string $extension;
+    public string $filename = 'filename';
+    public string $extension = '';
 
     /**
      * can be set:
